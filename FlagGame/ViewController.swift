@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var welcomeView: UIView!
     @IBAction func playBtn(_ sender: Any) {
-        self.welcomeView.isHidden=true
-        self.gameView.isHidden=false
+//        self.welcomeView.isHidden=true
+//        self.gameView.isHidden=false
+        performSegue(withIdentifier: "playseque", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
