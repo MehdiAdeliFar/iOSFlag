@@ -8,7 +8,6 @@
 
 import UIKit
 
-<<<<<<< HEAD
 class HistoryViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     let tableData=["time:1:30 score 95%","time:2:30 score 95%","time:3:30 score 95%"]
     // table view from https://www.appcoda.com/ios-programming-tutorial-create-a-simple-table-view-app/
@@ -26,11 +25,6 @@ class HistoryViewController: UIViewController ,UITableViewDelegate,UITableViewDa
     
 
     @IBOutlet weak var historyTable: UITableView!
-=======
-class HistoryViewController: UIViewController {
-    
-
->>>>>>> 42e7fe81ff0fcf08ed4a8352adf7b45b48847292
     @IBAction func historyBackButton(_ sender: Any) {
         dismiss(animated: true
             , completion: nil)
@@ -40,11 +34,8 @@ class HistoryViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
         historyTable.delegate=self
         historyTable.dataSource=self
-=======
->>>>>>> 42e7fe81ff0fcf08ed4a8352adf7b45b48847292
         // Do any additional setup after loading the view.
     }
     
