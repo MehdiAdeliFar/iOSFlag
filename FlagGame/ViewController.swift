@@ -17,6 +17,15 @@ class ViewController: UIViewController {
     @IBAction func playBtn(_ sender: Any) {
 //        self.welcomeView.isHidden=true
 //        self.gameView.isHidden=false
+        let fileManager = FileManager.default
+        let bundleURL = Bundle.main.bundleURL
+        let assetURL = bundleURL.appendingPathComponent("Images.bundle")
+        let contents = try! fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+        
+        for item in contents
+        {
+            print(item.lastPathComponent)
+        }
         performSegue(withIdentifier: "playseque", sender: self)
     }
     override func viewDidLoad() {
