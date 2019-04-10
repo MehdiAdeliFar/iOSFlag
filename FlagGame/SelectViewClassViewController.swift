@@ -2,8 +2,8 @@
 import UIKit
 
 class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
-    let continents=["Asia","Europe","Africa","America","Oceania","World"]
-    let numbers=["5","10","15"]
+    var continents=[String]()
+    let numbers=[5,10,15]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1;
     }
@@ -19,7 +19,7 @@ class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPi
         if pickerView==continentPicker {
             return continents[row]
         }else{
-            return numbers[row]
+            return String(numbers[row])
         }    }
     
 
@@ -34,21 +34,40 @@ class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setContinents()
         continentPicker.delegate=self
         continentPicker.dataSource=self
         numberPicker.delegate=self
         numberPicker.dataSource=self
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier=="selectToGameSeque" {
+            let dist=segue.destination as! GameViewController
+            dist.numberOfQuestions=numbers[ numberPicker.selectedRow(inComponent: 0)]
+            dist.continent=continents[continentPicker.selectedRow(inComponent: 0)].replacingOccurrences(of: " ", with: "_")
+        }
+    }
+    func setContinents(){
+        let fileManager = FileManager.default
+        let bundleURL = Bundle.main.bundleURL
+        let assetURL = bundleURL.appendingPathComponent("flags")
+        let contents = try! fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+        
+        for item in contents
+        {
+            continents.append(item.lastPathComponent.replacingOccurrences(of: "_", with: " "))
+            
+        }
+        continents.append("World")
+    }
+    /*
+     MARK: - Navigation
+
+     In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         Get the new view controller using segue.destination.
+         Pass the selected object to the new view controller.
     }
     */
 

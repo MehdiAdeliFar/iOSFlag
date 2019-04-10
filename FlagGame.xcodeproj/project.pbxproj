@@ -19,6 +19,7 @@
 		9147A65F223C1DA2006303F0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147A65E223C1DA2006303F0 /* ResultViewController.swift */; };
 		9147A661223C1F19006303F0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147A660223C1F19006303F0 /* HistoryViewController.swift */; };
 		91679033225DC8C600F320DD /* flags in Resources */ = {isa = PBXBuildFile; fileRef = 91679032225DC8C600F320DD /* flags */; };
+		918465E5225DFB5600F89A61 /* FlagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918465E4225DFB5600F89A61 /* FlagModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9147A65E223C1DA2006303F0 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		9147A660223C1F19006303F0 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		91679032225DC8C600F320DD /* flags */ = {isa = PBXFileReference; lastKnownFileType = folder; path = flags; sourceTree = "<group>"; };
+		918465E4225DFB5600F89A61 /* FlagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				9147A65C223C1B55006303F0 /* GameViewController.swift */,
 				9147A65E223C1DA2006303F0 /* ResultViewController.swift */,
 				9147A660223C1F19006303F0 /* HistoryViewController.swift */,
+				918465E4225DFB5600F89A61 /* FlagModel.swift */,
 			);
 			path = FlagGame;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9147A65F223C1DA2006303F0 /* ResultViewController.swift in Sources */,
+				918465E5225DFB5600F89A61 /* FlagModel.swift in Sources */,
 				9147A65D223C1B55006303F0 /* GameViewController.swift in Sources */,
 				9147A65B223C18DB006303F0 /* SelectViewClassViewController.swift in Sources */,
 				9147A661223C1F19006303F0 /* HistoryViewController.swift in Sources */,
