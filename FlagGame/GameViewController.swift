@@ -3,32 +3,67 @@ import UIKit
 
 class GameViewController: UIViewController {
     var numberOfQuestions:Int = 0
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var btn3: UIButton!
+    @IBOutlet weak var btn4: UIButton!
+    @IBAction func btnClicked(_ sender: UIButton) {
+        print(sender.titleLabel?.text)
+        if playNumber>numberOfQuestions{
+            //show result
+            performSegue(withIdentifier: "gameToResultSeque", sender: self)
+            return
+        }
+        checkAnswer(selectedName: sender.title(for: .normal))
+        showFlag()
+        playNumber=playNumber+1
+    }
+    
     var playNumber=0
     var continent:String=""
     var countries = [FlagModel]()
     @IBOutlet weak var mainImage: UIImageView!
     @IBAction func buttonClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: "gameToResultSeque", sender: self)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         fillCountries()
-        if playNumber>numberOfQuestions{
-            //show result
-            return
-        }
+       
+        showFlag()
+        
+//        for _ in 0..<numberOfQuestions {
+//            //todo find random country
+//            //find 3 other random country
+//            //show first country as image and show name in button
+//            //show 3 other country name in buttons
+//        }
+    }
+    func checkAnswer(selectedName:String!) {
+        
+    }
+    func showFlag()  {
         countries.shuffle()
         let data:NSData? = NSData(contentsOf : countries[0].url)
         let image = UIImage(data : data! as Data)
         mainImage.image=image
-        
-        for _ in 0..<numberOfQuestions {
-            //todo find random country
-            //find 3 other random country
-            //show first country as image and show name in button
-            //show 3 other country name in buttons
-        }
+        var showingCountries=[countries[0],countries[1],countries[2],countries[3]]
+        showingCountries.shuffle()
+        btn1.setTitle(getOnlyCountryName(c: showingCountries[0]) , for: .normal)
+        print(showingCountries[0].imageName)
+       btn2.setTitle(getOnlyCountryName(c: showingCountries[1]), for: .normal)
+        print(showingCountries[1].imageName)
+        btn3.setTitle(getOnlyCountryName(c: showingCountries[2]), for: .normal)
+        print(showingCountries[2].imageName)
+        btn4.setTitle(getOnlyCountryName(c: showingCountries[3]), for: .normal)
+        print(showingCountries[3].imageName)
     }
+    func getOnlyCountryName(c:FlagModel) -> String {
+        let name=c.imageName.replacingOccurrences(of: "\(c.continentName)-", with: "")
+        return name.replacingOccurrences(of: ".png", with: "")
+    
+    }
+    
     func fillCountries(){
         countries.removeAll()
         if continent=="World" {
