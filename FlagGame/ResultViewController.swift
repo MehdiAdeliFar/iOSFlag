@@ -1,10 +1,4 @@
-//
-//  ResultViewController.swift
-//  FlagGame
-//
-//  Created by Mehdi on 2019-03-15.
-//  Copyright © 2019 Mehdi. All rights reserved.
-//
+
 
 import UIKit
 

@@ -1,10 +1,4 @@
-//
-//  FlagGameTests.swift
-//  FlagGameTests
-//
-//  Created by Mehdi on 2019-02-15.
-//  Copyright © 2019 Mehdi. All rights reserved.
-//
+
 
 import XCTest
 @testable import FlagGame

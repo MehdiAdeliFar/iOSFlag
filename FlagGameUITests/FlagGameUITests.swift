@@ -1,10 +1,4 @@
-//
-//  FlagGameUITests.swift
-//  FlagGameUITests
-//
-//  Created by Mehdi on 2019-02-15.
-//  Copyright © 2019 Mehdi. All rights reserved.
-//
+
 
 import XCTest
 

@@ -1,15 +1,9 @@
-//
-//  GameViewController.swift
-//  FlagGame
-//
-//  Created by Mehdi on 2019-03-15.
-//  Copyright © 2019 Mehdi. All rights reserved.
-//
 
 import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var mainImage: UIImageView!
     @IBAction func buttonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "gameToResultSeque", sender: self)
     }
@@ -17,6 +11,20 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    func changeImage(){
+        let fileManager = FileManager.default
+        let bundleURL = Bundle.main.bundleURL
+        let assetURL = bundleURL.appendingPathComponent("flags/Asia")
+        let contents = try! fileManager.contentsOfDirectory(at: assetURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+        
+        for item in contents
+        {
+            print(item.lastPathComponent)
+        }
+        let data:NSData? = NSData(contentsOf : contents[contents.count-1].absoluteURL)
+        let image = UIImage(data : data! as Data)
+        mainImage.image=image
     }
     
 

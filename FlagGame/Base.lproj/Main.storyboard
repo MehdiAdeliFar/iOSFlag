@@ -176,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="gameView" destination="eJs-8V-Xs0" id="QBU-YF-3ya"/>
+                        <outlet property="mainImage" destination="qoF-k2-XmH" id="LqZ-QQ-Uwi"/>
                         <segue destination="Tic-iu-l4D" kind="showDetail" identifier="playseque" id="mYV-u2-ToA"/>
                     </connections>
                 </viewController>
@@ -191,8 +192,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="North_America-Canada" translatesAutoresizingMaskIntoConstraints="NO" id="J37-LB-D2h">
-                                <rect key="frame" x="16" y="77" width="343" height="56"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="North_America-Canada" translatesAutoresizingMaskIntoConstraints="NO" id="J37-LB-D2h">
+                                <rect key="frame" x="16" y="39" width="343" height="164"/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-8V-Xs0">
                                 <rect key="frame" x="0.0" y="247" width="375" height="147"/>
@@ -243,6 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="0IS-12-4uf"/>
                     </view>
                     <connections>
+                        <outlet property="mainImage" destination="J37-LB-D2h" id="Oi4-Sc-ReU"/>
                         <segue destination="9oG-uU-Mw8" kind="show" identifier="gameToResultSeque" id="mZ4-Qm-JjK"/>
                     </connections>
                 </viewController>
@@ -399,6 +401,6 @@
         <image name="world" width="974" height="547"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="90G-oG-f5N"/>
+        <segue reference="mYV-u2-ToA"/>
     </inferredMetricsTieBreakers>
 </document>
