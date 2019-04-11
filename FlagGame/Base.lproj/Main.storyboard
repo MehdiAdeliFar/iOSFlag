@@ -197,7 +197,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-8V-Xs0">
-                                <rect key="frame" x="0.0" y="247" width="375" height="147"/>
+                                <rect key="frame" x="0.0" y="247" width="375" height="201"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7F-3Y-kaZ">
                                         <rect key="frame" x="18" y="87" width="155" height="30"/>
@@ -211,7 +211,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffo-FO-icr">
                                         <rect key="frame" x="18" y="24" width="155" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.62952480349999995" green="0.77408124010000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.63137254901960782" green="0.77254901960784317" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Iran">
                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -237,6 +237,14 @@
                                             <action selector="btnClicked:" destination="850-PD-eid" eventType="touchUpInside" id="jBJ-g8-gNU"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHQ-vl-Heh">
+                                        <rect key="frame" x="171" y="135" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextBtnClicked:" destination="850-PD-eid" eventType="touchUpInside" id="rri-Hb-wmJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.67583626760000004" green="0.92215008799999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -259,6 +267,7 @@
                         <outlet property="btn3" destination="W7F-3Y-kaZ" id="lDu-o6-kw8"/>
                         <outlet property="btn4" destination="us7-N4-0ff" id="CJy-Nl-ZqY"/>
                         <outlet property="mainImage" destination="J37-LB-D2h" id="Oi4-Sc-ReU"/>
+                        <outlet property="nextBtn" destination="MHQ-vl-Heh" id="8gg-Hq-Kyw"/>
                         <segue destination="9oG-uU-Mw8" kind="show" identifier="gameToResultSeque" id="mZ4-Qm-JjK"/>
                     </connections>
                 </viewController>
@@ -345,6 +354,10 @@
                         <viewLayoutGuide key="safeArea" id="ftE-oG-k0Z"/>
                     </view>
                     <connections>
+                        <outlet property="percentLabel" destination="SfM-bU-A1l" id="kyS-tg-jdL"/>
+                        <outlet property="previousTimeLabel" destination="qiJ-eM-5ZH" id="9xT-Fh-bQ5"/>
+                        <outlet property="statusImage" destination="WLu-7X-79B" id="6UL-CO-bch"/>
+                        <outlet property="timeLable" destination="d7T-rw-hxL" id="XMS-Zl-ppA"/>
                         <segue destination="lbH-di-N6O" kind="show" identifier="resultToHistorySeque" id="I31-Cu-s4a"/>
                         <segue destination="Tic-iu-l4D" kind="show" identifier="resultToSelectSeque" id="c6g-kW-idr"/>
                     </connections>
@@ -415,6 +428,6 @@
         <image name="world" width="974" height="547"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mYV-u2-ToA"/>
+        <segue reference="c6g-kW-idr"/>
     </inferredMetricsTieBreakers>
 </document>
