@@ -303,7 +303,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOk-hU-Kl0">
-                                <rect key="frame" x="67" y="285" width="240" height="128"/>
+                                <rect key="frame" x="67" y="285" width="240" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your score: 100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfM-bU-A1l">
@@ -328,7 +328,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PH-vI-0EM">
-                                        <rect key="frame" x="123" y="91" width="127" height="48"/>
+                                        <rect key="frame" x="123" y="125" width="127" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Replay">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -338,18 +338,25 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-xk-PeQ">
-                                        <rect key="frame" x="-10" y="90" width="127" height="49"/>
+                                        <rect key="frame" x="-10" y="124" width="127" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Quit"/>
                                         <connections>
                                             <action selector="quitButtonClick:" destination="9oG-uU-Mw8" eventType="touchUpInside" id="hpo-Vd-oXd"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGp-tr-dqT">
+                                        <rect key="frame" x="0.0" y="87" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dv-KB-l8o">
-                                <rect key="frame" x="157" y="421" width="61" height="33"/>
+                                <rect key="frame" x="157" y="452" width="61" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="History"/>
@@ -363,6 +370,7 @@
                     </view>
                     <connections>
                         <outlet property="congMsgLabel" destination="jOt-Vw-7gT" id="wi2-Qr-E3i"/>
+                        <outlet property="correctLabel" destination="xGp-tr-dqT" id="dOh-CM-tR1"/>
                         <outlet property="percentLabel" destination="SfM-bU-A1l" id="kyS-tg-jdL"/>
                         <outlet property="previousTimeLabel" destination="qiJ-eM-5ZH" id="9xT-Fh-bQ5"/>
                         <outlet property="statusImage" destination="WLu-7X-79B" id="6UL-CO-bch"/>

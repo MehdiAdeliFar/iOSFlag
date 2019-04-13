@@ -8,6 +8,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var timeLable: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
     
+    @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var previousTimeLabel: UILabel!
     
     @IBOutlet weak var congMsgLabel: UILabel!
@@ -39,6 +40,7 @@ class ResultViewController: UIViewController {
         }
         let db=DatabaseAction()
         db.insertScoreToDB(data: Score(_id: 0, _time: gameSeconds, _q: questionNumbers, _c: correctAnswers))
+        correctLabel.text="Correct answers:\(correctAnswers) of \(questionNumbers)"
         let lastScores=db.getScores()
         if lastScores.count>1 {
             minutes=lastScores[1].time / 60
