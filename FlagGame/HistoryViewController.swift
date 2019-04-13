@@ -2,12 +2,13 @@
 import UIKit
 
 class HistoryViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-    let tableData=["time:1:30 score 95%","time:2:30 score 95%","time:3:30 score 95%"]
+//    let tableData=["time:1:30 score 95%","time:2:30 score 95%","time:3:30 score 95%"]
+    var tableData=[String]()
     // table view from https://www.appcoda.com/ios-programming-tutorial-create-a-simple-table-view-app/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
-    // fill cell value picked from https://www.ioscreator.com/tutorials/tableview-tutorial-in-ios8-with-swift
+    // fill cell value cited: https://www.ioscreator.com/tutorials/tableview-tutorial-in-ios8-with-swift
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier:"cell")
         cell.textLabel?.text=tableData[indexPath.row]
@@ -27,6 +28,16 @@ class HistoryViewController: UIViewController ,UITableViewDelegate,UITableViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let db=DatabaseAction()
+        let scores=db.getScores()
+        for item in scores {
+            let minute=item.time/60
+            let seconds=item.time%60
+            let gamePercent=Float( item.correct) / Float( item.questions) * Float(100)
+            
+            
+            tableData.append("time:\(minute):\(seconds) score \(String(Int( gamePercent)))%")
+        }
         historyTable.delegate=self
         historyTable.dataSource=self
         // Do any additional setup after loading the view.

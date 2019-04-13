@@ -32,6 +32,7 @@ class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPi
     @IBAction func startButtonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "selectToGameSeque", sender: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setContinents()
@@ -41,6 +42,8 @@ class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPi
         numberPicker.dataSource=self
         // Do any additional setup after loading the view.
     }
+    
+    //picker view find selected item cited: https://stackoverflow.com/questions/26674399/getting-selected-value-of-a-uipickerviewcontrol-in-swift
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="selectToGameSeque" {
             let dist=segue.destination as! GameViewController
@@ -48,6 +51,8 @@ class SelectViewClassViewController: UIViewController ,UIPickerViewDelegate,UIPi
             dist.continent=continents[continentPicker.selectedRow(inComponent: 0)].replacingOccurrences(of: " ", with: "_")
         }
     }
+    
+    //file list site: https://stackoverflow.com/questions/38317444/how-to-get-assets-xcassets-file-names-in-an-array-or-some-data-structure/38319754
     func setContinents(){
         let fileManager = FileManager.default
         let bundleURL = Bundle.main.bundleURL

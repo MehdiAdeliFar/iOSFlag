@@ -84,6 +84,7 @@ class GameViewController: UIViewController {
         
         
     }
+    //set image from url cited: https://stackoverflow.com/questions/10972555/ios-load-an-image-from-url/27822875
     func showFlag()  {
        
         countries.shuffle()
