@@ -1,2 +1,2 @@
 # iOSFlag
-app for ios course project 
+game of country flags. to quiz flag of countries.
